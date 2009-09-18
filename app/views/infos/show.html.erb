@@ -1,0 +1,16 @@
+<% title "Info" %>
+
+<p>
+  <strong>Title:</strong>
+  <%=h @info.title %>
+</p>
+<p>
+  <strong>Body:</strong>
+  <%=h @info.body %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_info_path(@info) %> |
+  <%= link_to "Destroy", @info, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", infos_path %>
+</p>

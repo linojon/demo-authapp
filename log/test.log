@@ -1,0 +1,359 @@
+
+
+Processing UserSessionsController#new (for 0.0.0.0 at 2009-09-18 14:31:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 11ms (View: 7, DB: 1) | 200 OK [http://test.host/login]
+
+
+Processing UserSessionsController#create (for 0.0.0.0 at 2009-09-18 14:31:12) [POST]
+  Parameters: {"user_session"=>{"username"=>"foo", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".username) = 'foo') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 154ms (View: 3, DB: 1) | 200 OK [http://test.host/user_sessions?user_session%5Bpassword%5D=badpassword&user_session%5Busername%5D=foo]
+
+
+Processing UserSessionsController#create (for 0.0.0.0 at 2009-09-18 14:31:12) [POST]
+  Parameters: {"user_session"=>{"username"=>"foo", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".username) = 'foo') LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 6ms (DB: 1) | 302 Found [http://test.host/user_sessions?user_session%5Bpassword%5D=secret&user_session%5Busername%5D=foo]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 876516207) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 876516207) [0m
+
+
+Processing UsersController#new (for 0.0.0.0 at 2009-09-18 14:31:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://test.host/signup]
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-18 14:31:12) [POST]
+  Parameters: {"action"=>"create", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-18 14:31:12) [POST]
+  Parameters: {"action"=>"create", "controller"=>"users"}
+  [4;36;1mUser Create (0.6ms)[0m   [0;1mINSERT INTO "users" ("created_at", "crypted_password", "updated_at", "username", "password_salt", "persistence_token", "email") VALUES('2009-09-18 18:31:12', NULL, '2009-09-18 18:31:12', NULL, NULL, NULL, NULL)[0m
+Redirected to http://test.host/
+Completed in 4ms (DB: 1) | 302 Found [http://test.host/users]
+
+
+Processing InfosController#index (for 0.0.0.0 at 2009-09-18 14:31:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"infos"}
+  [4;35;1mInfo Load (0.9ms)[0m   [0mSELECT * FROM "infos" [0m
+Rendering template within layouts/application
+Rendering infos/index
+Completed in 13ms (View: 6, DB: 1) | 200 OK [http://test.host/infos]
+  [4;36;1mInfo Load (0.4ms)[0m   [0;1mSELECT * FROM "infos" LIMIT 1[0m
+
+
+Processing InfosController#show (for 0.0.0.0 at 2009-09-18 14:31:12) [GET]
+  Parameters: {"action"=>"show", "id"=>#<Info id: 953125641, title: "MyString", body: "MyText", created_at: "2009-09-18 18:31:12", updated_at: "2009-09-18 18:31:12">, "controller"=>"infos"}
+  [4;35;1mInfo Load (0.4ms)[0m   [0mSELECT * FROM "infos" WHERE ("infos"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering infos/show
+Completed in 4ms (View: 3, DB: 1) | 200 OK [http://test.host/infos/953125641]
+
+
+Processing InfosController#new (for 0.0.0.0 at 2009-09-18 14:31:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"infos"}
+Rendering template within layouts/application
+Rendering infos/new
+Rendered infos/_form (2.9ms)
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://test.host/infos/new]
+
+
+Processing InfosController#create (for 0.0.0.0 at 2009-09-18 14:31:12) [POST]
+  Parameters: {"action"=>"create", "controller"=>"infos"}
+Rendering template within layouts/application
+Rendering infos/new
+Rendered infos/_form (1.8ms)
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://test.host/infos]
+
+
+Processing InfosController#create (for 0.0.0.0 at 2009-09-18 14:31:12) [POST]
+  Parameters: {"action"=>"create", "controller"=>"infos"}
+  [4;36;1mInfo Create (0.7ms)[0m   [0;1mINSERT INTO "infos" ("created_at", "title", "body", "updated_at") VALUES('2009-09-18 18:31:12', NULL, NULL, '2009-09-18 18:31:12')[0m
+Redirected to http://test.host/infos/996332878
+Completed in 5ms (DB: 1) | 302 Found [http://test.host/infos]
+  [4;35;1mInfo Load (0.5ms)[0m   [0mSELECT * FROM "infos" LIMIT 1[0m
+
+
+Processing InfosController#edit (for 0.0.0.0 at 2009-09-18 14:31:12) [GET]
+  Parameters: {"action"=>"edit", "id"=>#<Info id: 953125641, title: "MyString", body: "MyText", created_at: "2009-09-18 18:31:12", updated_at: "2009-09-18 18:31:12">, "controller"=>"infos"}
+  [4;36;1mInfo Load (0.5ms)[0m   [0;1mSELECT * FROM "infos" WHERE ("infos"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering infos/edit
+Rendered infos/_form (2.1ms)
+Completed in 8ms (View: 5, DB: 1) | 200 OK [http://test.host/infos/953125641/edit]
+  [4;35;1mInfo Load (0.5ms)[0m   [0mSELECT * FROM "infos" LIMIT 1[0m
+
+
+Processing InfosController#update (for 0.0.0.0 at 2009-09-18 14:31:12) [PUT]
+  Parameters: {"action"=>"update", "id"=>#<Info id: 953125641, title: "MyString", body: "MyText", created_at: "2009-09-18 18:31:12", updated_at: "2009-09-18 18:31:12">, "controller"=>"infos"}
+  [4;36;1mInfo Load (0.4ms)[0m   [0;1mSELECT * FROM "infos" WHERE ("infos"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering infos/edit
+Rendered infos/_form (1.7ms)
+Completed in 5ms (View: 4, DB: 1) | 200 OK [http://test.host/infos/953125641]
+  [4;35;1mInfo Load (0.4ms)[0m   [0mSELECT * FROM "infos" LIMIT 1[0m
+
+
+Processing InfosController#update (for 0.0.0.0 at 2009-09-18 14:31:12) [PUT]
+  Parameters: {"action"=>"update", "id"=>#<Info id: 953125641, title: "MyString", body: "MyText", created_at: "2009-09-18 18:31:12", updated_at: "2009-09-18 18:31:12">, "controller"=>"infos"}
+  [4;36;1mInfo Load (0.4ms)[0m   [0;1mSELECT * FROM "infos" WHERE ("infos"."id" = 953125641) [0m
+Redirected to http://test.host/infos/953125641
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/infos/953125641]
+  [4;35;1mInfo Load (0.5ms)[0m   [0mSELECT * FROM "infos" LIMIT 1[0m
+
+
+Processing InfosController#destroy (for 0.0.0.0 at 2009-09-18 14:31:12) [DELETE]
+  Parameters: {"action"=>"destroy", "id"=>#<Info id: 953125641, title: "MyString", body: "MyText", created_at: "2009-09-18 18:31:12", updated_at: "2009-09-18 18:31:12">, "controller"=>"infos"}
+  [4;36;1mInfo Load (0.4ms)[0m   [0;1mSELECT * FROM "infos" WHERE ("infos"."id" = 953125641) [0m
+  [4;35;1mInfo Destroy (0.6ms)[0m   [0mDELETE FROM "infos" WHERE "id" = 953125641[0m
+Redirected to http://test.host/infos
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/infos/953125641]
+  [4;36;1mInfo Exists (0.2ms)[0m   [0;1mSELECT "infos".id FROM "infos" WHERE ("infos"."id" = 953125641) LIMIT 1[0m
+
+
+Processing UserSessionsController#new (for 0.0.0.0 at 2009-09-18 14:47:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://test.host/login]
+
+
+Processing UserSessionsController#create (for 0.0.0.0 at 2009-09-18 14:47:58) [POST]
+  Parameters: {"user_session"=>{"username"=>"foo", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".username) = 'foo') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 133ms (View: 3, DB: 1) | 200 OK [http://test.host/user_sessions?user_session%5Bpassword%5D=badpassword&user_session%5Busername%5D=foo]
+
+
+Processing UserSessionsController#create (for 0.0.0.0 at 2009-09-18 14:47:58) [POST]
+  Parameters: {"user_session"=>{"username"=>"foo", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".username) = 'foo') LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 5ms (DB: 1) | 302 Found [http://test.host/user_sessions?user_session%5Bpassword%5D=secret&user_session%5Busername%5D=foo]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 876516207) LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 876516207) [0m
+
+
+Processing UsersController#new (for 0.0.0.0 at 2009-09-18 14:47:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 8ms (View: 5, DB: 1) | 200 OK [http://test.host/signup]
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-18 14:47:58) [POST]
+  Parameters: {"action"=>"create", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-18 14:47:58) [POST]
+  Parameters: {"action"=>"create", "controller"=>"users"}
+  [4;36;1mUser Create (0.6ms)[0m   [0;1mINSERT INTO "users" ("created_at", "crypted_password", "updated_at", "username", "password_salt", "persistence_token", "email") VALUES('2009-09-18 18:47:58', NULL, '2009-09-18 18:47:58', NULL, NULL, NULL, NULL)[0m
+Redirected to http://test.host/
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/users]
+
+
+Processing InfosController#index (for 0.0.0.0 at 2009-09-18 14:47:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"infos"}
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/infos]
+  [4;35;1mInfo Load (0.5ms)[0m   [0mSELECT * FROM "infos" LIMIT 1[0m
+
+
+Processing InfosController#show (for 0.0.0.0 at 2009-09-18 14:47:58) [GET]
+  Parameters: {"action"=>"show", "id"=>#<Info id: 953125641, title: "MyString", body: "MyText", created_at: "2009-09-18 18:47:58", updated_at: "2009-09-18 18:47:58">, "controller"=>"infos"}
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/infos/953125641]
+
+
+Processing InfosController#new (for 0.0.0.0 at 2009-09-18 14:47:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"infos"}
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/infos/new]
+
+
+Processing InfosController#create (for 0.0.0.0 at 2009-09-18 14:47:58) [POST]
+  Parameters: {"action"=>"create", "controller"=>"infos"}
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/infos]
+
+
+Processing InfosController#create (for 0.0.0.0 at 2009-09-18 14:47:58) [POST]
+  Parameters: {"action"=>"create", "controller"=>"infos"}
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/infos]
+  [4;36;1mInfo Load (0.4ms)[0m   [0;1mSELECT * FROM "infos" LIMIT 1[0m
+
+
+Processing InfosController#edit (for 0.0.0.0 at 2009-09-18 14:47:59) [GET]
+  Parameters: {"action"=>"edit", "id"=>#<Info id: 953125641, title: "MyString", body: "MyText", created_at: "2009-09-18 18:47:58", updated_at: "2009-09-18 18:47:58">, "controller"=>"infos"}
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/infos/953125641/edit]
+  [4;35;1mInfo Load (0.5ms)[0m   [0mSELECT * FROM "infos" LIMIT 1[0m
+
+
+Processing InfosController#update (for 0.0.0.0 at 2009-09-18 14:47:59) [PUT]
+  Parameters: {"action"=>"update", "id"=>#<Info id: 953125641, title: "MyString", body: "MyText", created_at: "2009-09-18 18:47:58", updated_at: "2009-09-18 18:47:58">, "controller"=>"infos"}
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/infos/953125641]
+  [4;36;1mInfo Load (0.5ms)[0m   [0;1mSELECT * FROM "infos" LIMIT 1[0m
+
+
+Processing InfosController#update (for 0.0.0.0 at 2009-09-18 14:47:59) [PUT]
+  Parameters: {"action"=>"update", "id"=>#<Info id: 953125641, title: "MyString", body: "MyText", created_at: "2009-09-18 18:47:58", updated_at: "2009-09-18 18:47:58">, "controller"=>"infos"}
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 1) | 302 Found [http://test.host/infos/953125641]
+  [4;35;1mInfo Load (0.4ms)[0m   [0mSELECT * FROM "infos" LIMIT 1[0m
+
+
+Processing InfosController#destroy (for 0.0.0.0 at 2009-09-18 14:47:59) [DELETE]
+  Parameters: {"action"=>"destroy", "id"=>#<Info id: 953125641, title: "MyString", body: "MyText", created_at: "2009-09-18 18:47:58", updated_at: "2009-09-18 18:47:58">, "controller"=>"infos"}
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/infos/953125641]
+
+
+Processing UserSessionsController#new (for 0.0.0.0 at 2009-09-18 14:48:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 11ms (View: 7, DB: 2) | 200 OK [http://test.host/login]
+
+
+Processing UserSessionsController#create (for 0.0.0.0 at 2009-09-18 14:48:46) [POST]
+  Parameters: {"user_session"=>{"username"=>"foo", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".username) = 'foo') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 132ms (View: 3, DB: 1) | 200 OK [http://test.host/user_sessions?user_session%5Bpassword%5D=badpassword&user_session%5Busername%5D=foo]
+
+
+Processing UserSessionsController#create (for 0.0.0.0 at 2009-09-18 14:48:46) [POST]
+  Parameters: {"user_session"=>{"username"=>"foo", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".username) = 'foo') LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 6ms (DB: 1) | 302 Found [http://test.host/user_sessions?user_session%5Bpassword%5D=secret&user_session%5Busername%5D=foo]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 876516207) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 876516207) [0m
+
+
+Processing UsersController#new (for 0.0.0.0 at 2009-09-18 14:48:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://test.host/signup]
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-18 14:48:46) [POST]
+  Parameters: {"action"=>"create", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-18 14:48:46) [POST]
+  Parameters: {"action"=>"create", "controller"=>"users"}
+  [4;36;1mUser Create (0.6ms)[0m   [0;1mINSERT INTO "users" ("created_at", "crypted_password", "updated_at", "username", "password_salt", "persistence_token", "email") VALUES('2009-09-18 18:48:46', NULL, '2009-09-18 18:48:46', NULL, NULL, NULL, NULL)[0m
+Redirected to http://test.host/
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/users]
+
+
+Processing InfosController#index (for 0.0.0.0 at 2009-09-18 14:48:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"infos"}
+  [4;35;1mInfo Load (0.6ms)[0m   [0mSELECT * FROM "infos" [0m
+Rendering template within layouts/application
+Rendering infos/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://test.host/infos]
+  [4;36;1mInfo Load (0.5ms)[0m   [0;1mSELECT * FROM "infos" LIMIT 1[0m
+
+
+Processing InfosController#show (for 0.0.0.0 at 2009-09-18 14:48:47) [GET]
+  Parameters: {"action"=>"show", "id"=>#<Info id: 953125641, title: "MyString", body: "MyText", created_at: "2009-09-18 18:48:46", updated_at: "2009-09-18 18:48:46">, "controller"=>"infos"}
+  [4;35;1mInfo Load (0.4ms)[0m   [0mSELECT * FROM "infos" WHERE ("infos"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering infos/show
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://test.host/infos/953125641]
+
+
+Processing InfosController#new (for 0.0.0.0 at 2009-09-18 14:48:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"infos"}
+Rendering template within layouts/application
+Rendering infos/new
+Rendered infos/_form (2.8ms)
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://test.host/infos/new]
+
+
+Processing InfosController#create (for 0.0.0.0 at 2009-09-18 14:48:47) [POST]
+  Parameters: {"action"=>"create", "controller"=>"infos"}
+Rendering template within layouts/application
+Rendering infos/new
+Rendered infos/_form (1.4ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://test.host/infos]
+
+
+Processing InfosController#create (for 0.0.0.0 at 2009-09-18 14:48:47) [POST]
+  Parameters: {"action"=>"create", "controller"=>"infos"}
+  [4;36;1mInfo Create (0.6ms)[0m   [0;1mINSERT INTO "infos" ("created_at", "title", "body", "updated_at") VALUES('2009-09-18 18:48:47', NULL, NULL, '2009-09-18 18:48:47')[0m
+Redirected to http://test.host/infos/996332878
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/infos]
+  [4;35;1mInfo Load (0.5ms)[0m   [0mSELECT * FROM "infos" LIMIT 1[0m
+
+
+Processing InfosController#edit (for 0.0.0.0 at 2009-09-18 14:48:47) [GET]
+  Parameters: {"action"=>"edit", "id"=>#<Info id: 953125641, title: "MyString", body: "MyText", created_at: "2009-09-18 18:48:46", updated_at: "2009-09-18 18:48:46">, "controller"=>"infos"}
+  [4;36;1mInfo Load (0.4ms)[0m   [0;1mSELECT * FROM "infos" WHERE ("infos"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering infos/edit
+Rendered infos/_form (1.8ms)
+Completed in 6ms (View: 5, DB: 1) | 200 OK [http://test.host/infos/953125641/edit]
+  [4;35;1mInfo Load (0.5ms)[0m   [0mSELECT * FROM "infos" LIMIT 1[0m
+
+
+Processing InfosController#update (for 0.0.0.0 at 2009-09-18 14:48:47) [PUT]
+  Parameters: {"action"=>"update", "id"=>#<Info id: 953125641, title: "MyString", body: "MyText", created_at: "2009-09-18 18:48:46", updated_at: "2009-09-18 18:48:46">, "controller"=>"infos"}
+  [4;36;1mInfo Load (0.4ms)[0m   [0;1mSELECT * FROM "infos" WHERE ("infos"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering infos/edit
+Rendered infos/_form (1.9ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://test.host/infos/953125641]
+  [4;35;1mInfo Load (0.4ms)[0m   [0mSELECT * FROM "infos" LIMIT 1[0m
+
+
+Processing InfosController#update (for 0.0.0.0 at 2009-09-18 14:48:47) [PUT]
+  Parameters: {"action"=>"update", "id"=>#<Info id: 953125641, title: "MyString", body: "MyText", created_at: "2009-09-18 18:48:46", updated_at: "2009-09-18 18:48:46">, "controller"=>"infos"}
+  [4;36;1mInfo Load (0.4ms)[0m   [0;1mSELECT * FROM "infos" WHERE ("infos"."id" = 953125641) [0m
+Redirected to http://test.host/infos/953125641
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/infos/953125641]
+  [4;35;1mInfo Load (0.6ms)[0m   [0mSELECT * FROM "infos" LIMIT 1[0m
+
+
+Processing InfosController#destroy (for 0.0.0.0 at 2009-09-18 14:48:47) [DELETE]
+  Parameters: {"action"=>"destroy", "id"=>#<Info id: 953125641, title: "MyString", body: "MyText", created_at: "2009-09-18 18:48:46", updated_at: "2009-09-18 18:48:46">, "controller"=>"infos"}
+  [4;36;1mInfo Load (0.4ms)[0m   [0;1mSELECT * FROM "infos" WHERE ("infos"."id" = 953125641) [0m
+  [4;35;1mInfo Destroy (0.5ms)[0m   [0mDELETE FROM "infos" WHERE "id" = 953125641[0m
+Redirected to http://test.host/infos
+Completed in 3ms (DB: 2) | 302 Found [http://test.host/infos/953125641]
+  [4;36;1mInfo Exists (0.4ms)[0m   [0;1mSELECT "infos".id FROM "infos" WHERE ("infos"."id" = 953125641) LIMIT 1[0m

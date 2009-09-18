@@ -1,0 +1,18 @@
+<% title "Edit User Profile" %>
+<% form_for @user do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.password_field :password, :value => nil, :autocomplete => 'off' %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+	<p><%= link_to "Cancel", root_url %>
+<% end %>

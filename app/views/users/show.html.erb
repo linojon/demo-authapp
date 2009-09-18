@@ -1,0 +1,12 @@
+<% title "Show User Profile" %>
+<p>
+  <strong>Username:</strong>
+  <%=h @user.username %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%=h @user.email %>
+</p>
+<p>
+  <%= link_to "Edit Profile", edit_user_path(@user) %>
+</p>

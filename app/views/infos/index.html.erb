@@ -1,0 +1,19 @@
+<% title "Infos" %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+  </tr>
+  <% for info in @infos %>
+    <tr>
+      <td><%=h info.title %></td>
+      <td><%=h info.body %></td>
+      <td><%= link_to "Show", info %></td>
+      <td><%= link_to "Edit", edit_info_path(info) %></td>
+      <td><%= link_to "Destroy", info, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Info", new_info_path %></p>
